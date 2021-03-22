@@ -1,50 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<!DOCTYPE html> <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> <style type="text/css">
-    body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
-    </style> <script type="text/javascript" 
-    //ak填自己申请的ak
-    src="http://api.map.baidu.com/api?v=2.0& ak=mW9Qzc5IiF3vQUp5jw0tWApm9vGxbWee">
-    </script> <title>百度地图api展示</title> </head> <body> <div id="allmap"></div> </body> </html> <script type="text/javascript">
-    //新建三个地图上点
-    var points = [  {"lat":31.15721243142649,"lng":121.11893061613377,"quyu":"聚类-1"},
-    {"lat":31.022895636171828,"lng":121.8634092322954,"quyu":"聚类-10"},
-    {"lat":31.207521810244895,"lng":121.26829516708558,"quyu":"聚类-100"},
-    {"lat":30.91095770991601,"lng":121.72884881113485,"quyu":"聚类-101"},
-    {"lat":31.32647819209382,"lng":121.86076599818415,"quyu":"聚类-102"},
-    ]; 
- 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-    function addMarker(points){  // 创建图标对象     
-  
-    // 创建标注对象并添加到地图     
-    for(var i = 0,pointsLen = points.length;i <pointsLen;i++){  
-        var point = new BMap.Point(points[i].lng,points[i].lat);      
-        var  marker = new BMap.Marker(point);     
-        var label = new BMap.Label(points[i].quyu, {
-                offset : new BMap.Size(5, 4)
-            }); 
-        label.setStyle({
-            background:'none',color:'#000',border:'none',fontSize:'2px',fontWeight:'bold' //只要对label样式进行设置就可达到在标注图标上显示数字的效果
-            
-            });
-        marker.setLabel(label);//显示地理名称 a 
-        map.addOverlay(marker);   
- 
+<body>
+    hello world
+</body>
 
-  }  
-
-} 
-
-    //创建地图实例
-    var map = new BMap.Map("allmap");    
-    map.centerAndZoom(new BMap.Point(121.39, 31.34), 15);  //  map.centerAndZoom方法创建地图，第一个参数可以是根据之前创建好的一个点为中心，创建出地图，也可以根据城市地区的中文名称创建地图。（如果拼写正确，可以根据城市的英文名称来创建），map.centerAndZoom第二个参数是地图缩放级别，最大为19，最小为0。（但实际当缩小到3的时候就已经。。。）
-    // map.centerAndZoom( "湖南");          //设置地图初始化城市
-    // map.setCurrentCity("湖南");          //设置地图初始化城市
-    map.addControl(new BMap.MapTypeControl());      //添加比如右上角2D,3D卫星地图类型控件
-    map.enableScrollWheelZoom(true);     //添加滚动缩放
-    
-    map.addControl(new BMap.ScaleControl());    //添加左下方比例尺控件
-    addMarker(points);
-    </script>
-
-    
+</html>
